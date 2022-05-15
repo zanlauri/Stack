@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// parts of code modifired from tutorial
+// https://www.youtube.com/watch?v=VVv1neQpuLw C# Stack Form (4) 完整解說
 
 namespace OPPM
 {
@@ -18,43 +20,50 @@ namespace OPPM
 
 class Stack
         {
-            public string[] arrayData;
+            public int[] arrayData;
             public int TOP;
 
             public Stack(int n)
             {
-                arrayData = new string[n];
+                arrayData = new int[n];
                 TOP = 0;
             }
-            public void Push(string ss)
+            public void Push(int ss)
             {
                 if (TOP == arrayData.Length)
                 {
-                    MessageBox.Show("testing");
+                    MessageBox.Show("Stack Full");
                     return;
                 }
                 arrayData[TOP] = ss;
                 TOP += 1;
             }
-            public string Pop()
+            public int Pop()
             {
                 if (TOP ==0)
                 {
                     MessageBox.Show("Empty Stack");
-                    return "";
+                    return arrayData[TOP];
                 }
-                TOP -= 1;
-                return arrayData[TOP];
+                else
+                {
+                    TOP -= 1;
+                    return arrayData[TOP];
+                }
+              
             }
-            public string Peek()
+            public int Peek()
             {
                 if (TOP == 0)
                 {
                     MessageBox.Show("Empty Stack");
-                    return "";
+                    return arrayData[TOP];
                 }
-                TOP -= 1;
-                return arrayData[TOP];
+                else
+                {
+                    return arrayData[TOP - 1];
+                }
+         
             }
 
         }
@@ -66,22 +75,30 @@ class Stack
             buttonPUSH.Visible = false;
             buttonPOP.Visible = false;
             buttonPEEK.Visible = false;
-            buttonCLEAR.Visible = false;
             textBoxPush.Visible = false;
             labelStartUpChoose.Visible = true;
+            labelPeek.Visible = false;
+            labelPop.Visible = false;
         }
        
 
         private void buttonPUSH_Click(object sender, EventArgs e)
         {
-            s1.Push(textBoxPush.Text);
-            PrintStack();
+            try
+            {
+                s1.Push(int.Parse(textBoxPush.Text));
+                PrintStack();
+            }
+            catch
+            {
+                MessageBox.Show("Numbers Only");
+            }
 
         }
 
         private void buttonPOP_Click(object sender, EventArgs e)
         {
-            labelPop.Text = s1.Pop();
+            labelPop.Text = s1.Pop() + " Poped";
             PrintStack();
             }
 
@@ -97,9 +114,10 @@ class Stack
             buttonPUSH.Visible = true;
             buttonPOP.Visible = true;
             buttonPEEK.Visible = true;
-            buttonCLEAR.Visible = true;
             textBoxPush.Visible = true;
             labelStartUpChoose.Visible = false;
+            labelPeek.Visible = true;
+            labelPop.Visible = true;
             }
             catch
             {
@@ -124,8 +142,13 @@ class Stack
 
         private void buttonPEEK_Click(object sender, EventArgs e)
         {
-            labelPeek.Text = s1.Peek();
+            labelPeek.Text = s1.Peek() + " Peek";
             
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
     }

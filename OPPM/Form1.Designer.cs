@@ -32,7 +32,6 @@ namespace OPPM
             this.buttonPUSH = new System.Windows.Forms.Button();
             this.buttonPOP = new System.Windows.Forms.Button();
             this.buttonPEEK = new System.Windows.Forms.Button();
-            this.buttonCLEAR = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.textBoxStack = new System.Windows.Forms.TextBox();
             this.buttonStackBegin = new System.Windows.Forms.Button();
@@ -73,15 +72,6 @@ namespace OPPM
             this.buttonPEEK.UseVisualStyleBackColor = true;
             this.buttonPEEK.Click += new System.EventHandler(this.buttonPEEK_Click);
             // 
-            // buttonCLEAR
-            // 
-            this.buttonCLEAR.Location = new System.Drawing.Point(83, 260);
-            this.buttonCLEAR.Name = "buttonCLEAR";
-            this.buttonCLEAR.Size = new System.Drawing.Size(75, 23);
-            this.buttonCLEAR.TabIndex = 5;
-            this.buttonCLEAR.Text = "CLEAR";
-            this.buttonCLEAR.UseVisualStyleBackColor = true;
-            // 
             // textBoxStack
             // 
             this.textBoxStack.Location = new System.Drawing.Point(289, 55);
@@ -104,7 +94,7 @@ namespace OPPM
             // 
             this.textBox1.Location = new System.Drawing.Point(113, 9);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 25);
+            this.textBox1.Size = new System.Drawing.Size(45, 25);
             this.textBox1.TabIndex = 9;
             // 
             // textBoxPush
@@ -119,16 +109,18 @@ namespace OPPM
             this.labelPop.AutoSize = true;
             this.labelPop.Location = new System.Drawing.Point(176, 171);
             this.labelPop.Name = "labelPop";
-            this.labelPop.Size = new System.Drawing.Size(0, 15);
+            this.labelPop.Size = new System.Drawing.Size(31, 15);
             this.labelPop.TabIndex = 12;
+            this.labelPop.Text = "Pop";
             // 
             // labelPeek
             // 
             this.labelPeek.AutoSize = true;
-            this.labelPeek.Location = new System.Drawing.Point(165, 221);
+            this.labelPeek.Location = new System.Drawing.Point(176, 218);
             this.labelPeek.Name = "labelPeek";
-            this.labelPeek.Size = new System.Drawing.Size(0, 15);
+            this.labelPeek.Size = new System.Drawing.Size(39, 15);
             this.labelPeek.TabIndex = 13;
+            this.labelPeek.Text = "Peek";
             // 
             // labelStartUpChoose
             // 
@@ -152,12 +144,12 @@ namespace OPPM
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonStackBegin);
             this.Controls.Add(this.textBoxStack);
-            this.Controls.Add(this.buttonCLEAR);
             this.Controls.Add(this.buttonPEEK);
             this.Controls.Add(this.buttonPOP);
             this.Controls.Add(this.buttonPUSH);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,7 +159,6 @@ namespace OPPM
         private System.Windows.Forms.Button buttonPUSH;
         private System.Windows.Forms.Button buttonPOP;
         private System.Windows.Forms.Button buttonPEEK;
-        private System.Windows.Forms.Button buttonCLEAR;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TextBox textBoxStack;
         private System.Windows.Forms.Button buttonStackBegin;
