@@ -29,25 +29,19 @@ namespace OPPM
         /// </summary>
         private void InitializeComponent()
         {
-            this.Number_Entry = new System.Windows.Forms.NumericUpDown();
             this.buttonPUSH = new System.Windows.Forms.Button();
             this.buttonPOP = new System.Windows.Forms.Button();
             this.buttonPEEK = new System.Windows.Forms.Button();
             this.buttonCLEAR = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.textBoxStack = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonStackBegin = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBoxPop = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.Number_Entry)).BeginInit();
+            this.textBoxPush = new System.Windows.Forms.TextBox();
+            this.labelPop = new System.Windows.Forms.Label();
+            this.labelPeek = new System.Windows.Forms.Label();
+            this.labelStartUpChoose = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // Number_Entry
-            // 
-            this.Number_Entry.Location = new System.Drawing.Point(83, 55);
-            this.Number_Entry.Name = "Number_Entry";
-            this.Number_Entry.Size = new System.Drawing.Size(120, 25);
-            this.Number_Entry.TabIndex = 0;
             // 
             // buttonPUSH
             // 
@@ -77,6 +71,7 @@ namespace OPPM
             this.buttonPEEK.TabIndex = 4;
             this.buttonPEEK.Text = "PEEK";
             this.buttonPEEK.UseVisualStyleBackColor = true;
+            this.buttonPEEK.Click += new System.EventHandler(this.buttonPEEK_Click);
             // 
             // buttonCLEAR
             // 
@@ -95,64 +90,92 @@ namespace OPPM
             this.textBoxStack.Size = new System.Drawing.Size(100, 271);
             this.textBoxStack.TabIndex = 7;
             // 
-            // button1
+            // buttonStackBegin
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonStackBegin.Location = new System.Drawing.Point(12, 12);
+            this.buttonStackBegin.Name = "buttonStackBegin";
+            this.buttonStackBegin.Size = new System.Drawing.Size(75, 23);
+            this.buttonStackBegin.TabIndex = 8;
+            this.buttonStackBegin.Text = "Begin Stack";
+            this.buttonStackBegin.UseVisualStyleBackColor = true;
+            this.buttonStackBegin.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(113, 9);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 25);
+            this.textBox1.Size = new System.Drawing.Size(152, 25);
             this.textBox1.TabIndex = 9;
             // 
-            // textBoxPop
+            // textBoxPush
             // 
-            this.textBoxPop.Location = new System.Drawing.Point(164, 168);
-            this.textBoxPop.Name = "textBoxPop";
-            this.textBoxPop.Size = new System.Drawing.Size(100, 25);
-            this.textBoxPop.TabIndex = 10;
+            this.textBoxPush.Location = new System.Drawing.Point(165, 119);
+            this.textBoxPush.Name = "textBoxPush";
+            this.textBoxPush.Size = new System.Drawing.Size(100, 25);
+            this.textBoxPush.TabIndex = 11;
+            // 
+            // labelPop
+            // 
+            this.labelPop.AutoSize = true;
+            this.labelPop.Location = new System.Drawing.Point(176, 171);
+            this.labelPop.Name = "labelPop";
+            this.labelPop.Size = new System.Drawing.Size(0, 15);
+            this.labelPop.TabIndex = 12;
+            // 
+            // labelPeek
+            // 
+            this.labelPeek.AutoSize = true;
+            this.labelPeek.Location = new System.Drawing.Point(165, 221);
+            this.labelPeek.Name = "labelPeek";
+            this.labelPeek.Size = new System.Drawing.Size(0, 15);
+            this.labelPeek.TabIndex = 13;
+            // 
+            // labelStartUpChoose
+            // 
+            this.labelStartUpChoose.AutoSize = true;
+            this.labelStartUpChoose.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelStartUpChoose.Location = new System.Drawing.Point(110, 74);
+            this.labelStartUpChoose.Name = "labelStartUpChoose";
+            this.labelStartUpChoose.Size = new System.Drawing.Size(553, 30);
+            this.labelStartUpChoose.TabIndex = 14;
+            this.labelStartUpChoose.Text = "Choose How Many Entried in the Stack";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBoxPop);
+            this.Controls.Add(this.labelStartUpChoose);
+            this.Controls.Add(this.labelPeek);
+            this.Controls.Add(this.labelPop);
+            this.Controls.Add(this.textBoxPush);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonStackBegin);
             this.Controls.Add(this.textBoxStack);
             this.Controls.Add(this.buttonCLEAR);
             this.Controls.Add(this.buttonPEEK);
             this.Controls.Add(this.buttonPOP);
             this.Controls.Add(this.buttonPUSH);
-            this.Controls.Add(this.Number_Entry);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.Number_Entry)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.NumericUpDown Number_Entry;
         private System.Windows.Forms.Button buttonPUSH;
         private System.Windows.Forms.Button buttonPOP;
         private System.Windows.Forms.Button buttonPEEK;
         private System.Windows.Forms.Button buttonCLEAR;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TextBox textBoxStack;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonStackBegin;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBoxPop;
+        private System.Windows.Forms.TextBox textBoxPush;
+        private System.Windows.Forms.Label labelPop;
+        private System.Windows.Forms.Label labelPeek;
+        private System.Windows.Forms.Label labelStartUpChoose;
     }
 }
 
