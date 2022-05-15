@@ -35,8 +35,10 @@ namespace OPPM
             this.buttonPEEK = new System.Windows.Forms.Button();
             this.buttonCLEAR = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.listBoxStack = new System.Windows.Forms.ListBox();
             this.textBoxStack = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxPop = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Number_Entry)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,15 +87,6 @@ namespace OPPM
             this.buttonCLEAR.Text = "CLEAR";
             this.buttonCLEAR.UseVisualStyleBackColor = true;
             // 
-            // listBoxStack
-            // 
-            this.listBoxStack.FormattingEnabled = true;
-            this.listBoxStack.ItemHeight = 15;
-            this.listBoxStack.Location = new System.Drawing.Point(523, 55);
-            this.listBoxStack.Name = "listBoxStack";
-            this.listBoxStack.Size = new System.Drawing.Size(194, 319);
-            this.listBoxStack.TabIndex = 6;
-            // 
             // textBoxStack
             // 
             this.textBoxStack.Location = new System.Drawing.Point(289, 55);
@@ -102,13 +95,39 @@ namespace OPPM
             this.textBoxStack.Size = new System.Drawing.Size(100, 271);
             this.textBoxStack.TabIndex = 7;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(113, 9);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 25);
+            this.textBox1.TabIndex = 9;
+            // 
+            // textBoxPop
+            // 
+            this.textBoxPop.Location = new System.Drawing.Point(164, 168);
+            this.textBoxPop.Name = "textBoxPop";
+            this.textBoxPop.Size = new System.Drawing.Size(100, 25);
+            this.textBoxPop.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxPop);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxStack);
-            this.Controls.Add(this.listBoxStack);
             this.Controls.Add(this.buttonCLEAR);
             this.Controls.Add(this.buttonPEEK);
             this.Controls.Add(this.buttonPOP);
@@ -130,8 +149,10 @@ namespace OPPM
         private System.Windows.Forms.Button buttonPEEK;
         private System.Windows.Forms.Button buttonCLEAR;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.ListBox listBoxStack;
         private System.Windows.Forms.TextBox textBoxStack;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxPop;
     }
 }
 
